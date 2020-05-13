@@ -60,6 +60,6 @@ shadowJar {
 
 docker {
     dependsOn shadowJar
-    name 'elucidation:latest'
+    name 'fortitudetec/elucidation-server:latest'
     files tasks.shadowJar.outputs, 'config.yml'
 }
