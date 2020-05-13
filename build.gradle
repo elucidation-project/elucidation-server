@@ -16,7 +16,7 @@ mainClassName = "com.fortitudetec.elucidation.App"
 
 ext {
     // Runtime dependency versions
-    dropwizardVersion = '2.0.8'
+    dropwizardVersion = '1.3.9'
     elucidationVersion = '2.0.2'
     sqlliteVersion = '3.30.1'
 

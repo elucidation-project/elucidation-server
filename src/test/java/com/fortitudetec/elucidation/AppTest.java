@@ -3,12 +3,12 @@ package com.fortitudetec.elucidation;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fortitudetec.elucidation.config.AppConfig;
+import com.fortitudetec.elucidation.server.resources.RelationshipResource;
 import io.dropwizard.testing.ConfigOverride;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit5.DropwizardAppExtension;
 import io.dropwizard.testing.junit5.DropwizardExtensionsSupport;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,11 +28,6 @@ class AppTest {
             ConfigOverride.config("database.url", "jdbc:sqlite::memory::")
     );
 
-    @BeforeEach
-    void setUp() {
-        // TODO: Add db migrate
-    }
-
     @AfterAll
     static void removeDb() throws IOException {
         Files.deleteIfExists(Path.of("./:memory::"));
@@ -40,8 +35,7 @@ class AppTest {
 
     @Test
     void testRun() {
-        // TODO: Make this real
-        assertThat(true).isTrue();
+        assertThat(APP.getEnvironment().jersey().getResourceConfig().isRegistered(RelationshipResource.class)).isTrue();
     }
 
 }

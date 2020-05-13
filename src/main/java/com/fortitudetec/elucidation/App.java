@@ -1,6 +1,7 @@
 package com.fortitudetec.elucidation;
 
 import com.fortitudetec.elucidation.config.AppConfig;
+import com.fortitudetec.elucidation.server.ElucidationBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.PooledDataSourceFactory;
 import io.dropwizard.migrations.MigrationsBundle;
@@ -24,10 +25,18 @@ public class App extends Application<AppConfig> {
                 return configuration.getDataSourceFactory();
             }
         });
+
+        bootstrap.addBundle(new ElucidationBundle<AppConfig>() {
+
+            @Override
+            public PooledDataSourceFactory getDataSourceFactory(AppConfig configuration) {
+                return configuration.getDataSourceFactory();
+            }
+        });
     }
 
     @Override
     public void run(AppConfig config, Environment env) {
-        // TODO: Add stuff here
+        LOG.info("Starting Elucidation Server");
     }
 }
