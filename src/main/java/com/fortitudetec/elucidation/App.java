@@ -18,16 +18,14 @@ public class App extends Application<AppConfig> {
 
     @Override
     public void initialize(Bootstrap<AppConfig> bootstrap) {
-        bootstrap.addBundle(new MigrationsBundle<AppConfig>() {
-
+        bootstrap.addBundle(new MigrationsBundle<>() {
             @Override
             public PooledDataSourceFactory getDataSourceFactory(AppConfig configuration) {
                 return configuration.getDataSourceFactory();
             }
         });
 
-        bootstrap.addBundle(new ElucidationBundle<AppConfig>() {
-
+        bootstrap.addBundle(new ElucidationBundle<>() {
             @Override
             public PooledDataSourceFactory getDataSourceFactory(AppConfig configuration) {
                 return configuration.getDataSourceFactory();
