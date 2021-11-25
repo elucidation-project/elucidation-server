@@ -1,12 +1,12 @@
 plugins {
     id 'java'
     id 'application'
-    id("com.github.johnrengelman.shadow") version "5.2.0"
-    id("com.palantir.docker") version '0.25.0'
+    id("com.github.johnrengelman.shadow") version "7.1.0"
+    id("com.palantir.docker") version '0.30.0'
 }
 
 group = "com.fortitudetec.elucidation"
-version = "4.1.1"
+version = "4.1.2"
 
 repositories {
     mavenCentral()
@@ -17,17 +17,17 @@ mainClassName = "com.fortitudetec.elucidation.App"
 
 ext {
     // Runtime dependency versions
-    dropwizardVersion = '2.0.12'
-    elucidationVersion = '4.1.1'
-    sqlliteVersion = '3.30.1'
+    dropwizardVersion = '2.0.25'
+    elucidationVersion = '4.1.2'
+    sqlliteVersion = '3.36.0.2'
 
     // Provided dependency versions
-    lombokVersion = '1.18.12'
+    lombokVersion = '1.18.22'
 
     // Test dependency versions
-    junitVersion = '5.6.1'
-    assertjVersion = '3.15.0'
-    mockitoVersion = '3.3.3'
+    junitVersion = '5.8.1'
+    assertjVersion = '3.21.0'
+    mockitoVersion = '4.1.0'
 }
 
 dependencies {
@@ -53,7 +53,7 @@ test {
 }
 
 shadowJar {
-    archiveName 'elucidation.jar'
+    archiveFileName.set('elucidation.jar')
     mergeServiceFiles()
     exclude 'META-INF/*.DSA'
     exclude 'META-INF/*.RSA'
