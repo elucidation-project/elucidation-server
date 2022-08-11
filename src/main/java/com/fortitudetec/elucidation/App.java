@@ -25,7 +25,7 @@ public class App extends Application<AppConfig> {
             }
         });
 
-        bootstrap.addBundle(new ElucidationBundle<>() {
+        bootstrap.addBundle(new ElucidationBundle<AppConfig>() {
             @Override
             public PooledDataSourceFactory getDataSourceFactory(AppConfig configuration) {
                 return configuration.getDataSourceFactory();
