@@ -5,20 +5,20 @@ plugins {
     id("com.palantir.docker") version '0.30.0'
 }
 
-group = "com.fortitudetec.elucidation"
-version = "4.1.2"
+group = "org.kiwiproject.elucidation"
+version = "5.0.0"
 
 repositories {
     mavenCentral()
     mavenLocal()
 }
 
-mainClassName = "com.fortitudetec.elucidation.App"
+mainClassName = "org.kiwiproject.elucidation.App"
 
 ext {
     // Runtime dependency versions
     dropwizardVersion = '2.1.2'
-    elucidationVersion = '4.1.2'
+    elucidationVersion = '5.0.0'
     sqlliteVersion = '3.39.3.0'
 
     // Provided dependency versions
@@ -31,7 +31,7 @@ ext {
 }
 
 dependencies {
-    implementation "com.fortitudetec:elucidation-bundle:${elucidationVersion}"
+    implementation "org.kiwiproject:elucidation-bundle:${elucidationVersion}"
     implementation "io.dropwizard:dropwizard-core:${dropwizardVersion}"
     implementation "io.dropwizard:dropwizard-db:${dropwizardVersion}"
     implementation "io.dropwizard:dropwizard-jdbi3:${dropwizardVersion}"
@@ -61,6 +61,6 @@ shadowJar {
 
 docker {
     dependsOn shadowJar
-    name 'fortitudetec/elucidation-server:latest'
+    name 'kiwiproject/elucidation-server:latest'
     files tasks.shadowJar.outputs, 'config.yml'
 }

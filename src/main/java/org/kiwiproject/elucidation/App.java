@@ -1,7 +1,7 @@
-package com.fortitudetec.elucidation;
+package org.kiwiproject.elucidation;
 
-import com.fortitudetec.elucidation.config.AppConfig;
-import com.fortitudetec.elucidation.server.ElucidationBundle;
+import org.kiwiproject.elucidation.config.AppConfig;
+import org.kiwiproject.elucidation.server.ElucidationBundle;
 import io.dropwizard.Application;
 import io.dropwizard.db.PooledDataSourceFactory;
 import io.dropwizard.migrations.MigrationsBundle;
@@ -25,7 +25,7 @@ public class App extends Application<AppConfig> {
             }
         });
 
-        bootstrap.addBundle(new ElucidationBundle<AppConfig>() {
+        bootstrap.addBundle(new ElucidationBundle<>() {
             @Override
             public PooledDataSourceFactory getDataSourceFactory(AppConfig configuration) {
                 return configuration.getDataSourceFactory();

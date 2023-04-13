@@ -1,7 +1,7 @@
-package com.fortitudetec.elucidation.config;
+package org.kiwiproject.elucidation.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fortitudetec.elucidation.server.config.ElucidationConfiguration;
+import org.kiwiproject.elucidation.server.config.ElucidationConfiguration;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
 import lombok.Getter;

@@ -1,9 +1,9 @@
-package com.fortitudetec.elucidation;
+package org.kiwiproject.elucidation;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.fortitudetec.elucidation.config.AppConfig;
-import com.fortitudetec.elucidation.server.resources.RelationshipResource;
+import org.kiwiproject.elucidation.config.AppConfig;
+import org.kiwiproject.elucidation.server.resources.RelationshipResource;
 import io.dropwizard.testing.ConfigOverride;
 import io.dropwizard.testing.ResourceHelpers;
 import io.dropwizard.testing.junit5.DropwizardAppExtension;
